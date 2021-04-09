@@ -57,7 +57,7 @@
     "@progress/kendo-angular-e2e": "^2.2.0",
     "@progress/kendo-angular-jest-preset": "^2.0.0",
     "@progress/kendo-angular-tasks": "^18.0.2",
-    "@progress/kendo-licensing": "^1.0.0",
+    "@progress/kendo-licensing": "^1.1.4",
     "@progress/kendo-theme-default": "^3.0.0",
     "@telerik/semantic-prerelease": "^1.0.0",
     "@types/jest": "^21.1.8",
