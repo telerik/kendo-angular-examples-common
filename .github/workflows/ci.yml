@@ -24,11 +24,6 @@ jobs:
       - name: Install modules
         run: npm install --no-audit
 
-      - name: Activate Kendo UI License
-        run: npx kendo-ui-license activate
-        env:
-          KENDO_UI_LICENSE: ${{ secrets.KENDO_UI_LICENSE }}
-
       - name: Lint
         run: npm run lint
 
