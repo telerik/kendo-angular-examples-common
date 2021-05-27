@@ -1,18 +1,16 @@
 {
-  "name": "@progress/kendo-angular-component-base",
+  "name": "@progress/kendo-angular-examples-common",
   "description": "Kendo UI Angular component starter template",
   "author": "Progress",
   "license": "SEE LICENSE IN LICENSE.md",
   "version": "0.0.0-semantically-released",
   "main": "dist/npm/index.js",
-  "module": "dist/fesm5/index.js",
-  "es2015": "dist/fesm2015/index.js",
   "esm5": "dist/es/index.js",
   "esm2015": "dist/es2015/index.js",
   "jsnext:main": "dist/es/index.js",
-  "typings": "dist/es2015/index.d.ts",
   "jsdelivr": "dist/cdn/main.js",
   "unpkg": "dist/cdn/main.js",
+  "typings": "dist/es2015/index.d.ts",
   "sideEffects": false,
   "scripts": {
     "test": "jest",
@@ -22,7 +20,7 @@
     "start": "gulp start",
     "lint": "gulp lint && gulp lint-docs && tsc --noEmit",
     "api-check": "gulp api-check",
-    "build-package": "gulp build-package",
+    "build-package": "gulp build-npm-bundle build-cdn build-systemjs-bundle build-es2015-bundle",
     "semantic-release": "semantic-release pre && semantic-prerelease publish --public && semantic-release post"
   },
   "keywords": [

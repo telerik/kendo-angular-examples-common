@@ -12,6 +12,7 @@
     "importHelpers": true,
     "noImplicitAny": false,
     "noUnusedLocals": true,
+    "resolveJsonModule": true,
     "noUnusedParameters": true,
     "removeComments": false
   },

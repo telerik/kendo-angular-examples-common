@@ -61,7 +61,9 @@ export const employeeTitles = ["Chief Executive Officer",
 
 export function makeEmployees(data: any[] , containsField: string
 ): Employee[] {
-
+    function test(emp: Employee): Employee {
+        return emp;
+    }
     function mapTree(nodes: any[]): void {
         if (!nodes ) {
             return;
