@@ -11,7 +11,6 @@ export class MockComponent {
 
     public greeting: string = "Hello";
 
-    constructor() {}
 }
 /**
  * Sample module

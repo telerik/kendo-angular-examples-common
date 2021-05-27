@@ -35,7 +35,7 @@ export interface Employee {
     phone: number;
     hireDate: Date;
 }
-export function createEmployee(id: number, managerId: number, firstName: string, lastName: string, title: string, phone: number, active: boolean = true, reports: any = [],  hireDate: Date = null) {
+export function createEmployee(id: number, managerId: number, firstName: string, lastName: string, title: string, phone: number, active: boolean = true, reports: any = [],  hireDate: Date = null): Employee {
     const emp: Employee = {
         id: id,
         managerId: managerId,
@@ -59,11 +59,9 @@ export const employeeTitles = ["Chief Executive Officer",
         "Director, Engineering",
         "QA Architect", "Chief Product Officer"];
 
-export function makeEmployees(data, containsField
+export function makeEmployees(data: any[] , containsField: string
 ): Employee[] {
-    function test(emp: Employee){
-        return emp;
-    }
+
     function mapTree(nodes: any[]): void {
         if (!nodes ) {
             return;
@@ -83,14 +81,15 @@ export function makeEmployees(data, containsField
 @Injectable()
 export class EmployeesService extends BehaviorSubject<any> {
 
+    private dataHier: any[] = makeEmployees(employeeHier, 'reports');
+
+    private data: any[] = makeFlatData(this.dataHier, 'id', 'managerId', 'reports');
+
     constructor() {
         super(null);
     }
-    private dataHier = makeEmployees(employeeHier, 'reports');
 
-    private data = makeFlatData(this.dataHier, 'id', 'managerId', 'reports');
-
-    public readStatic(query: any = {skip:0, take: 10}, flat: boolean = true): Array<any> {
+    public readStatic(query: any = {skip: 0, take: 10}, flat: boolean = true): Array<any> {
         if (flat) {
             let piece = this.data.slice(query.skip, query.take);
             return piece;
@@ -98,7 +97,7 @@ export class EmployeesService extends BehaviorSubject<any> {
             return this.dataHier;
         }
     }
-    public readAsync(query: any = {skip:0, take: 10}, flat: boolean = true, time: number = 0 ): Observable<any> {
+    public readAsync(query: any = {skip: 0, take: 10}, flat: boolean = true, time: number = 0 ): Observable<any> {
         if (flat) {
             let piece = this.data.slice(query.skip, query.take);
             return of(piece).pipe(delay(time));
@@ -107,39 +106,39 @@ export class EmployeesService extends BehaviorSubject<any> {
         }
     }
 
-    public save(item: any, isNew: boolean, time: number = 0, error: boolean = false) {
+    public save(item: any, isNew: boolean, time: number = 0, error: boolean = false): Observable<any> {
         const action = isNew ? CREATE_ACTION : UPDATE_ACTION;
         if (error) {
             return throwError(new Error('Error while updating'));
         }
 
-        if (action == CREATE_ACTION) {
+        if (action === CREATE_ACTION) {
             this.data.push(item);
         } else {
-            const updateIndex = this.data.findIndex(emp => emp.id == item.id);
-            if (updateIndex == -1) {
-                return throwError(new Error('Not found'))
+            const updateIndex = this.data.findIndex(emp => emp.id === item.id);
+            if (updateIndex === -1) {
+                return throwError(new Error('Not found'));
             }
             this.data[updateIndex] = item;
         }
         return of(this.data).pipe(delay(time));
     }
 
-    public reset() {
+    public reset(): void {
         this.data = makeEmployees(employeeHier, 'reports');
     }
 
-    public remove(item?: Employee, time: number = 0, error: boolean = false) {
+    public remove(item?: Employee, time: number = 0, error: boolean = false): Observable<any> {
         if (error) {
-            return throwError(new Error('Error while removing'))
+            return throwError(new Error('Error while removing'));
         }
 
-        const removeIndex = this.data.findIndex(emp => emp.id == item.id);
+        const removeIndex = this.data.findIndex(emp => emp.id === item.id);
 
-        if (removeIndex == -1) {
-            return throwError(new Error('Not found'))
+        if (removeIndex === -1) {
+            return throwError(new Error('Not found'));
         }
-        this.data.splice(removeIndex,1);
+        this.data.splice(removeIndex, 1);
         return of(this.data).pipe(delay(time));
     }
 
