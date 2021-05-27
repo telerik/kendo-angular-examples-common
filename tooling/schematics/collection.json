@@ -1,0 +1,12 @@
+{
+  "$schema": "./node_modules/@angular-devkit/schematics/collection-schema.json",
+  "schematics": {
+    "ng-add": {
+      "description": "Adds Kendo Angular Package to the application.",
+      "factory": "./ngAdd",
+      "schema": "./ngAdd/schema.json",
+      "hidden": true,
+      "private": true
+    }
+  }
+}

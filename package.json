@@ -1,0 +1,134 @@
+{
+  "name": "@progress/kendo-angular-component-base",
+  "description": "Kendo UI Angular component starter template",
+  "author": "Progress",
+  "license": "SEE LICENSE IN LICENSE.md",
+  "version": "0.0.0-semantically-released",
+  "main": "dist/npm/index.js",
+  "module": "dist/fesm5/index.js",
+  "es2015": "dist/fesm2015/index.js",
+  "esm5": "dist/es/index.js",
+  "esm2015": "dist/es2015/index.js",
+  "jsnext:main": "dist/es/index.js",
+  "typings": "dist/es2015/index.d.ts",
+  "jsdelivr": "dist/cdn/main.js",
+  "unpkg": "dist/cdn/main.js",
+  "sideEffects": false,
+  "scripts": {
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:ci": "ci-angular-test",
+    "e2e:ci": "ci-angular-e2e",
+    "start": "gulp start",
+    "lint": "gulp lint && gulp lint-docs && tsc --noEmit",
+    "api-check": "gulp api-check",
+    "build-package": "gulp build-package",
+    "semantic-release": "semantic-release pre && semantic-prerelease publish --public && semantic-release post"
+  },
+  "keywords": [
+    "Kendo UI",
+    "Angular"
+  ],
+  "peerDependencies": {
+    "@angular/common": "8 - 12",
+    "@angular/core": "8 - 12",
+    "@progress/kendo-angular-common": "^2.0.0",
+    "@progress/kendo-licensing": "^1.0.0",
+    "rxjs": "^6.4.0"
+  },
+  "dependencies": {
+    "@progress/kendo-schematics": "^1.1.0",
+    "tslib": "^1.9.0"
+  },
+  "devDependencies": {
+    "@angular-devkit/core": "^8.2.0",
+    "@angular-devkit/schematics": "^8.2.0",
+    "@angular/animations": "^8.2.0",
+    "@angular/common": "^8.2.0",
+    "@angular/compiler": "^8.2.0",
+    "@angular/compiler-cli": "^8.2.0",
+    "@angular/core": "^8.2.0",
+    "@angular/forms": "^8.2.0",
+    "@angular/platform-browser": "^8.2.0",
+    "@angular/platform-browser-dynamic": "^8.2.0",
+    "@angular/platform-server": "^8.2.0",
+    "@angular/router": "^8.2.0",
+    "@progress/kendo-angular-common": "^2.0.0",
+    "@progress/kendo-angular-e2e": "^2.2.0",
+    "@progress/kendo-angular-jest-preset": "^2.0.0",
+    "@progress/kendo-angular-tasks": "^18.0.2",
+    "@progress/kendo-licensing": "^1.0.0",
+    "@progress/kendo-theme-default": "^3.0.0",
+    "@telerik/semantic-prerelease": "^1.0.0",
+    "@types/jest": "^21.1.8",
+    "@types/node": "~8.9.4",
+    "@types/zone.js": "0.0.27",
+    "codelyzer": "^5.0.0",
+    "core-js": "^2.2.2",
+    "cz-conventional-changelog": "^1.1.5",
+    "ghooks": "^1.0.3",
+    "gulp": "^4.0.0",
+    "jest-cli": "^21.2.1",
+    "jest-junit": "^8.0.0",
+    "rxjs": "~6.4.0",
+    "rxjs-tslint-rules": "^4.23.1",
+    "semantic-release": "^6.3.6",
+    "tslint": "^5.0.0",
+    "typescript": "~3.4.2",
+    "validate-commit-msg": "^1.1.1",
+    "zone.js": "~0.9.1"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    },
+    "ghooks": {
+      "commit-msg": "validate-commit-msg"
+    },
+    "validate-commit-msg": {
+      "types": [
+        "feat",
+        "fix",
+        "docs",
+        "style",
+        "refactor",
+        "perf",
+        "test",
+        "chore",
+        "revert"
+      ],
+      "warnOnFail": false,
+      "maxSubjectLength": 100
+    }
+  },
+  "jest": {
+    "preset": "@progress/kendo-angular-jest-preset"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/telerik/kendo-angular-component-base.git"
+  },
+  "bugs": {
+    "url": "https://github.com/telerik/kendo-angular"
+  },
+  "homepage": "https://www.telerik.com/kendo-angular-ui/components/",
+  "release": {
+    "debug": false,
+    "branchTags": {
+      "develop": "dev"
+    },
+    "fallbackTags": {
+      "dev": "latest"
+    },
+    "analyzeCommits": "@telerik/semantic-prerelease/analyzeCommits",
+    "generateNotes": "@telerik/semantic-prerelease/generateNotes",
+    "getLastRelease": "@telerik/semantic-prerelease/getLastRelease",
+    "verifyConditions": "@telerik/semantic-prerelease/verifyConditions",
+    "verifyRelease": "@telerik/semantic-prerelease/verifyRelease"
+  },
+  "schematics": "./schematics/collection.json",
+  "files": [
+    "dist",
+    "schematics"
+  ]
+}

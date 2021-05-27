@@ -1,0 +1,28 @@
+{
+  "$schema": "http://json-schema.org/schema",
+  "id": "SchematicsKendoAngularPackage",
+  "title": "Kendo Angular Package Options Schema",
+  "type": "object",
+  "properties": {
+    "theme": {
+       "enum": [
+         "default",
+         "bootstrap",
+         "material"
+       ],
+       "default": "default",
+       "description": "The theme to apply"
+    },
+    "export": {
+      "type": "boolean",
+      "default": false,
+      "description": "Specifies if declaring module exports the component."
+    },
+    "skipInstall": {
+      "description": "Skip installing Kendo dependency packages.",
+      "type": "boolean",
+      "default": false
+    }
+  },
+  "required": []
+}
