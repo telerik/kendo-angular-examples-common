@@ -114,9 +114,7 @@
   "homepage": "https://www.telerik.com/kendo-angular-ui/components/",
   "release": {
     "debug": false,
-    "branchTags": {
-      "develop": "dev"
-    },
+    "branchTags": {},
     "fallbackTags": {
       "dev": "latest"
     },
@@ -126,9 +124,7 @@
     "verifyConditions": "@telerik/semantic-prerelease/verifyConditions",
     "verifyRelease": "@telerik/semantic-prerelease/verifyRelease"
   },
-  "schematics": "./schematics/collection.json",
   "files": [
-    "dist",
-    "schematics"
+    "dist"
   ]
 }

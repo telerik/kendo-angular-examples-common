@@ -2,8 +2,8 @@ import {
     TestBed, fakeAsync, tick
 } from '@angular/core/testing';
 import { Component } from '@angular/core';
-import { BaseModule } from '../src/base.module';
-import { EmployeesService, createEmployee, employeeTitles } from '../examples/e2e/employees.service';
+import { MockModule } from './mock.module';
+import { EmployeesService, createEmployee, employeeTitles } from '../src/employees.service';
 import { HttpClientModule } from '@angular/common/http';
 
 const fields = ['managerId', 'id', 'name', 'firstName', 'lastName', 'title', 'active', 'hireDate', 'phone'];
@@ -23,7 +23,7 @@ describe('employees', () => {
     beforeEach(() => {
         TestBed.configureTestingModule({
             declarations: [TestComponent],
-            imports: [BaseModule,  HttpClientModule],
+            imports: [MockModule,  HttpClientModule],
             providers: [EmployeesService]
         });
         const template: string = '<kendo-component></kendo-component>';

@@ -1,8 +1,8 @@
-import * as employeeHier from './employees.json';
 import { Injectable } from '@angular/core';
-//import { HttpClient } from '@angular/common/http';
 import { BehaviorSubject, Observable, of, throwError } from 'rxjs';
 import { delay } from 'rxjs/operators';
+import * as employeeHier from './employees.json';
+
 const CREATE_ACTION = 'create';
 const UPDATE_ACTION = 'update';
 
