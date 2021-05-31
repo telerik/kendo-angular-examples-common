@@ -15,12 +15,8 @@
   "scripts": {
     "test": "jest",
     "test:watch": "jest --watch",
-    "test:ci": "ci-angular-test",
-    "e2e:ci": "ci-angular-e2e",
-    "start": "gulp start",
     "lint": "gulp lint && gulp lint-docs && tsc --noEmit",
-    "api-check": "gulp api-check",
-    "build-package": "gulp build-npm-bundle build-cdn build-systemjs-bundle build-es2015-bundle",
+    "build-package": "rimraf dist && tsc",
     "semantic-release": "semantic-release pre && semantic-prerelease publish --public && semantic-release post"
   },
   "keywords": [
@@ -30,12 +26,10 @@
   "peerDependencies": {
     "@angular/common": "8 - 12",
     "@angular/core": "8 - 12",
-    "@progress/kendo-angular-common": "^2.0.0",
     "@progress/kendo-licensing": "^1.0.0",
     "rxjs": "^6.4.0"
   },
   "dependencies": {
-    "@progress/kendo-schematics": "^1.1.0",
     "tslib": "^1.9.0"
   },
   "devDependencies": {
@@ -51,12 +45,8 @@
     "@angular/platform-browser-dynamic": "^8.2.0",
     "@angular/platform-server": "^8.2.0",
     "@angular/router": "^8.2.0",
-    "@progress/kendo-angular-common": "^2.0.0",
-    "@progress/kendo-angular-e2e": "^2.2.0",
-    "@progress/kendo-angular-jest-preset": "^2.0.0",
     "@progress/kendo-angular-tasks": "^18.0.2",
     "@progress/kendo-licensing": "^1.1.4",
-    "@progress/kendo-theme-default": "^3.0.0",
     "@telerik/semantic-prerelease": "^1.0.0",
     "@types/jest": "^21.1.8",
     "@types/node": "~8.9.4",

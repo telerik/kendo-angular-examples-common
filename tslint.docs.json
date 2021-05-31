@@ -1,5 +1,0 @@
-{
-  "extends": [
-   "@progress/kendo-angular-tasks/tslint/base.docs.json"
- ]
-}
