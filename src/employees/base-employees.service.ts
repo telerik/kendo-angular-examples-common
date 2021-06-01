@@ -2,7 +2,7 @@ import { BehaviorSubject, Observable, of, throwError } from 'rxjs';
 import { delay } from 'rxjs/operators';
 import { Employee } from './employee.interface';
 import { parseData } from './parse-data';
-import data from './data.json';
+import { data } from './data';
 
 const makeFlatData = (data, idField, parentField, containsField): Employee[] => {
     const result = [];

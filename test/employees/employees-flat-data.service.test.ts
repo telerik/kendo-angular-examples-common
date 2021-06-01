@@ -48,7 +48,7 @@ describe('EmployeesFlatDataService', () => {
 
         tick(999);
         expect(data).toBe(null);
-    
+
         tick(1);
 
         expect(data.length).toBe(10);

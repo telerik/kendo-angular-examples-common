@@ -1,9 +1,11 @@
 {
   "compilerOptions": {
+    "outDir": "dist/es",
     "target": "es5",
-    "module": "commonjs",
+    "module": "es2015",
+    "moduleResolution": "node",
     "lib": ["es2015", "dom"],
-    "types": [ "jest", "zone.js" ],
+    "types": [],
 
     "declaration": false,
     "emitDecoratorMetadata": true,
@@ -17,12 +19,11 @@
   "files": [
     "src/main.ts"
   ],
-  "include": [
-    "src/**/*.ts",
-    "test/**/*.ts",
-    "e2e/**/*.ts"
-  ],
-  "exclude": [
-    "node_modules"
-  ]
+  "angularCompilerOptions": {
+    "flatModuleId": "@progress/kendo-angular-component-base",
+    "flatModuleOutFile": "index.js",
+    "rootDir": "src",
+    "skipMetadataEmit": false,
+    "skipTemplateCodegen": false
+  }
 }

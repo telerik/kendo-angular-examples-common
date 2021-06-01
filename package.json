@@ -13,10 +13,10 @@
   "typings": "dist/es2015/index.d.ts",
   "sideEffects": false,
   "scripts": {
+    "lint": "gulp lint && tsc --noEmit",
     "test": "jest",
     "test:watch": "jest --watch",
-    "lint": "gulp lint && tsc --noEmit",
-    "build-package": "rimraf dist && tsc",
+    "build-package": "gulp build-package",
     "semantic-release": "semantic-release pre && semantic-prerelease publish --public && semantic-release post"
   },
   "keywords": [

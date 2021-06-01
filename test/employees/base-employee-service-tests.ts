@@ -28,7 +28,7 @@ function createEmployee(id: number, managerId: number, firstName: string, lastNa
     return emp;
 }
 
-export function baseEmployeeServiceTests(serviceInstance: () => any) {
+export function baseEmployeeServiceTests(serviceInstance: () => any): void {
     let service: BaseEmployeesService;
 
     beforeEach(() => {
@@ -69,7 +69,7 @@ export function baseEmployeeServiceTests(serviceInstance: () => any) {
     it('should delete an item', fakeAsync(() => {
         let data = null;
         const deleteIndex = 32;
-        const emp = createEmployee(deleteIndex, 2, 'Berg', 'Haldurson', employeeTitles[6], 55555555);;
+        const emp = createEmployee(deleteIndex, 2, 'Berg', 'Haldurson', employeeTitles[6], 55555555);
         service.remove(emp, 1000).subscribe((res) => {
             data = res;
         });
