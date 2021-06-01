@@ -1,1 +1,1 @@
-export * from './employees.service';
+export * from './employees';

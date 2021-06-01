@@ -49,7 +49,7 @@
     "@progress/kendo-angular-tasks": "^18.0.2",
     "@progress/kendo-licensing": "^1.1.4",
     "@telerik/semantic-prerelease": "^1.0.0",
-    "@types/jest": "^21.1.8",
+    "@types/jest": "^21.1.10",
     "@types/node": "~8.9.4",
     "@types/zone.js": "0.0.27",
     "codelyzer": "^5.0.0",
