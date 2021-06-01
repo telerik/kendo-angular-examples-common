@@ -2,7 +2,7 @@
 <img width="631" src="https://www.telerik.com/kendo-angular-ui/npm-banner.svg">
 </a>
 
-## Common pieces used for Kendo Angular UI e2e/examples
+## Shared code and data for Kendo Angular UI end-to-end tests and examples
 
 Kendo UI for Angular is a commercial UI library designed and built for developing business applications with Angular. Every UI component in the Kendo UI for Angular suite has been built from the ground-up specifically for Angular.
 
