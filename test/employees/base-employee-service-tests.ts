@@ -69,11 +69,14 @@ export function baseEmployeeServiceTests(serviceInstance: () => any) {
     it('should delete an item', fakeAsync(() => {
         let data = null;
         const deleteIndex = 32;
-        service.remove({id: deleteIndex}, 1000).subscribe((res) => {
+        const emp = createEmployee(deleteIndex, 2, 'Berg', 'Haldurson', employeeTitles[6], 55555555);;
+        service.remove(emp, 1000).subscribe((res) => {
             data = res;
         });
+
         tick(999);
         expect(data).toBe(null);
+
         tick(1);
         const res = data.find((emp) => emp.id === deleteIndex);
         expect(res).toBe(undefined);

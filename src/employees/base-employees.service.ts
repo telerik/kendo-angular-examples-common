@@ -2,7 +2,7 @@ import { BehaviorSubject, Observable, of, throwError } from 'rxjs';
 import { delay } from 'rxjs/operators';
 import { Employee } from './employee.interface';
 import { parseData } from './parse-data';
-import data from './data';
+import data from './data.json';
 
 const makeFlatData = (data, idField, parentField, containsField): Employee[] => {
     const result = [];
@@ -48,7 +48,7 @@ export abstract class BaseEmployeesService extends BehaviorSubject<Employee[]> {
         return of(this.data).pipe(delay(fakeDelay));
     }
 
-    public remove(item: T, fakeDelay: number = 0, fakeError: boolean = false): Observable<T[]> {
+    public remove(item: Employee, fakeDelay: number = 0, fakeError: boolean = false): Observable<Employee[]> {
         if (fakeError) {
             return throwError(new Error('Error while removing'));
         }
@@ -64,7 +64,7 @@ export abstract class BaseEmployeesService extends BehaviorSubject<Employee[]> {
 
     public abstract readStatic(): Employee[];
 
-    protected itemIndex(item: T): number {
+    protected itemIndex(item: Employee): number {
         return this.data.findIndex(d => d.id === item.id);
     }
 
