@@ -3,7 +3,8 @@ import {
 } from '@angular/core/testing';
 import { Component } from '@angular/core';
 import { MockModule } from './mock.module';
-import { EmployeesService, createEmployee, employeeTitles } from '../src/employees.service';
+import { createEmployee, employeeTitles } from './utils';
+import { EmployeesService } from '../src/employees.service';
 import { HttpClientModule } from '@angular/common/http';
 
 const fields = ['managerId', 'id', 'name', 'firstName', 'lastName', 'title', 'active', 'hireDate', 'phone'];
@@ -34,7 +35,7 @@ describe('employees', () => {
 
 
     it('should inject service EmployeesService', () => {
-        expect(service).toBeTruthy();
+        expect(service).toBeInstanceOf(EmployeesService);
     });
     it('should return flat static data', () => {
         const flatData = service.readStatic({skip: 0, take: 10}, true);

@@ -25,40 +25,16 @@ const makeFlatData = (data, idField, parentField, containsField) => {
 
 export interface Employee {
     id: number;
-    managerId: number;
+    managerId?: number;
     name: string;
     firstName: string;
-    reports: any;
+    reports?: any;
     lastName: string;
     title: string;
     active: boolean;
     phone: number;
     hireDate: Date;
 }
-export function createEmployee(id: number, managerId: number, firstName: string, lastName: string, title: string, phone: number, active: boolean = true, reports: any = [],  hireDate: Date = null): Employee {
-    const emp: Employee = {
-        id: id,
-        managerId: managerId,
-        name: `${firstName} ${lastName}`,
-        firstName: firstName,
-        reports: reports,
-        lastName: lastName,
-        title: title,
-        active: active,
-        phone: phone,
-        hireDate: new Date(hireDate)
-    };
-    return emp;
-}
-
-export const employeeTitles = ["Chief Executive Officer",
-        "Chief Technical Officer",
-        "VP, Engineering",
-        "Team Lead",
-        "Software Architect",
-        "Director, Engineering",
-        "QA Architect", "Chief Product Officer"];
-
 export function makeEmployees(data: any[] , containsField: string
 ): Employee[] {
     function test(emp: Employee): Employee {
