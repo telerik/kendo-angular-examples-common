@@ -38,6 +38,8 @@
     "@angular/compiler": "^8.2.0",
     "@angular/compiler-cli": "^8.2.0",
     "@angular/core": "^8.2.0",
+    "@angular/platform-browser": "^8.2.0",
+    "@angular/platform-browser-dynamic": "^8.2.0",
     "@progress/kendo-angular-jest-preset": "^2.0.0",
     "@progress/kendo-angular-tasks": "^18.0.2",
     "@telerik/semantic-prerelease": "^1.0.0",
