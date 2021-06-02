@@ -35,7 +35,7 @@ describe('EmployeesFlatDataService', () => {
         const flatData = service.readStatic({skip: 0, take: 10});
         expect(flatData.length).toBe(10);
 
-        flatData.map((item) => fields.map(key =>
+        flatData.map((item) => fields.forEach(key =>
             expect(item[key]).toBeDefined())
         );
     });
@@ -52,9 +52,9 @@ describe('EmployeesFlatDataService', () => {
         tick(1);
 
         expect(data.length).toBe(10);
-        data.map(item => fields.map(key =>
-            expect(item[key]).toBeDefined())
-        );
+        data.map(item => fields.forEach(key =>
+            expect(item[key]).toBeDefined()
+        ));
     }));
 
     baseEmployeeServiceTests(() => service);

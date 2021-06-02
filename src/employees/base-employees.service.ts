@@ -3,23 +3,7 @@ import { delay } from 'rxjs/operators';
 import { Employee } from './employee.interface';
 import { parseData } from './parse-data';
 import { data } from './data';
-
-const makeFlatData = (data, idField, parentField, containsField): Employee[] => {
-    const result = [];
-    function visitChildren(childrenArray: any[], parentId: any): void {
-        if (!childrenArray) {
-            return;
-        }
-        for (let obj of childrenArray) {
-            let blank = {};
-            blank[parentField] = parentId;
-            result.push(Object.assign(blank, obj));
-            visitChildren(obj[containsField], obj[idField]);
-        }
-    }
-    visitChildren([data[0]], null);
-    return result;
-};
+import { flattenData } from './flatten-data';
 
 export abstract class BaseEmployeesService extends BehaviorSubject<Employee[]> {
     protected hierData: Employee[];
@@ -69,7 +53,7 @@ export abstract class BaseEmployeesService extends BehaviorSubject<Employee[]> {
     }
 
     protected reset(): void {
-        this.data = makeFlatData(data, 'id', 'managerId', 'reports');
+        this.data = flattenData(data);
         this.hierData = parseData(data);
     }
 }
