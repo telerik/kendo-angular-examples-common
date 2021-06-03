@@ -57,5 +57,6 @@ describe('EmployeesFlatDataService', () => {
         ));
     }));
 
+    //Assert BaseEmployeeService tests for EmployeesFlatDataService instance
     baseEmployeeServiceTests(() => service);
 });

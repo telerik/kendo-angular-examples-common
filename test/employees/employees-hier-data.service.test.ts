@@ -17,7 +17,7 @@ const assertHierarchy = (data) => {
     });
 };
 
-describe('EmployeesFlatDataService', () => {
+describe('EmployeesHierDataService', () => {
     @Component({
         template: ''
     })
@@ -60,5 +60,6 @@ describe('EmployeesFlatDataService', () => {
         assertHierarchy(data);
     }));
 
+    //Assert BaseEmployeeService tests for EmployeesHierDataService instance
     baseEmployeeServiceTests(() => service);
 });
