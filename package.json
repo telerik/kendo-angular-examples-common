@@ -13,10 +13,10 @@
   "typings": "dist/es2015/index.d.ts",
   "sideEffects": false,
   "scripts": {
+    "lint": "gulp lint && tsc --noEmit",
     "test": "jest",
     "test:watch": "jest --watch",
-    "lint": "gulp lint && tsc --noEmit",
-    "build-package": "rimraf dist && tsc",
+    "build-package": "gulp build-package",
     "semantic-release": "semantic-release pre && semantic-prerelease publish --public && semantic-release post"
   },
   "keywords": [
@@ -26,7 +26,6 @@
   "peerDependencies": {
     "@angular/common": "8 - 12",
     "@angular/core": "8 - 12",
-    "@progress/kendo-licensing": "^1.0.0",
     "rxjs": "^6.4.0"
   },
   "dependencies": {
@@ -35,21 +34,16 @@
   "devDependencies": {
     "@angular-devkit/core": "^8.2.0",
     "@angular-devkit/schematics": "^8.2.0",
-    "@angular/animations": "^8.2.0",
     "@angular/common": "^8.2.0",
     "@angular/compiler": "^8.2.0",
     "@angular/compiler-cli": "^8.2.0",
     "@angular/core": "^8.2.0",
-    "@angular/forms": "^8.2.0",
     "@angular/platform-browser": "^8.2.0",
     "@angular/platform-browser-dynamic": "^8.2.0",
-    "@angular/platform-server": "^8.2.0",
-    "@angular/router": "^8.2.0",
     "@progress/kendo-angular-jest-preset": "^2.0.0",
     "@progress/kendo-angular-tasks": "^18.0.2",
-    "@progress/kendo-licensing": "^1.1.4",
     "@telerik/semantic-prerelease": "^1.0.0",
-    "@types/jest": "^21.1.8",
+    "@types/jest": "^21.1.10",
     "@types/node": "~8.9.4",
     "@types/zone.js": "0.0.27",
     "codelyzer": "^5.0.0",

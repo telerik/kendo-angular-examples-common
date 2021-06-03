@@ -1,0 +1,31 @@
+{
+  "compilerOptions": {
+    "outDir": "dist/es2015",
+    "target": "es2015",
+    "module": "es2015",
+    "moduleResolution": "node",
+    "lib": ["es2015", "dom"],
+    "types": [],
+
+    "declaration": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "importHelpers": true,
+    "noImplicitAny": false,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "removeComments": false
+  },
+  "files": [
+    "src/main.ts"
+  ],
+  "angularCompilerOptions": {
+    "flatModuleId": "@progress/kendo-angular-component-base",
+    "flatModuleOutFile": "index.js",
+    "rootDir": "src",
+    "fullTemplateTypeCheck": true,
+    "skipTemplateCodegen": false,
+    "strictInjectionParameters": true,
+    "strictMetadataEmit": true
+  }
+}
