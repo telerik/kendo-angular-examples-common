@@ -33,6 +33,6 @@ describe('flatten-data', () => {
             }]
         }];
 
-        expect(flattenData(tree)).toEqual([{ id: 1, managerId: null }, { id: 2, managerId: null }, { id: 3, managerId: 2 }]);
+        expect(flattenData(tree)).toEqual([{"id": 2, "managerId": null}, {"id": 3, "managerId": 2}, {"id": 1, "managerId": null}]);
     });
 });
