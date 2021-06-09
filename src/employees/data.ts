@@ -380,68 +380,68 @@ export const data: any[] = [
               phone: 5633596023
             }
           ]
+        }
+      ]
+    },
+    {
+      id: 3,
+      name: 'Priscilla Frank',
+      firstName: 'Priscilla',
+      lastName: 'Frank',
+      title: 'Chief Product Officer',
+      active: true,
+      hireDate: '2019-01-01',
+      phone: 2172805300,
+      reports: [
+        {
+          id: 4,
+          name: 'Ursula Holmes',
+          firstName: 'Ursula',
+          lastName: 'Holmes',
+          title: 'EVP, Product Strategy',
+          active: true,
+          hireDate: '2019-01-17',
+          phone: 3709838796
         },
         {
-          id: 3,
-          name: 'Priscilla Frank',
-          firstName: 'Priscilla',
-          lastName: 'Frank',
-          title: 'Chief Product Officer',
+          id: 24,
+          name: 'Melvin Carrillo',
+          firstName: 'Melvin',
+          lastName: 'Carrillo',
+          title: 'Director, Developer Relations',
           active: true,
-          hireDate: '2019-01-01',
-          phone: 2172805300,
+          hireDate: '2019-01-15',
+          phone: 3444969555,
           reports: [
             {
-              id: 4,
-              name: 'Ursula Holmes',
-              firstName: 'Ursula',
-              lastName: 'Holmes',
-              title: 'EVP, Product Strategy',
+              id: 29,
+              name: 'Martha Chavez',
+              firstName: 'Martha',
+              lastName: 'Chavez',
+              title: 'Developer Advocate',
               active: true,
               hireDate: '2019-01-17',
-              phone: 3709838796
+              phone: 1407727509
             },
             {
-              id: 24,
-              name: 'Melvin Carrillo',
-              firstName: 'Melvin',
-              lastName: 'Carrillo',
-              title: 'Director, Developer Relations',
+              id: 30,
+              name: 'Oren Fox',
+              firstName: 'Oren',
+              lastName: 'Fox',
+              title: 'Developer Advocate',
               active: true,
-              hireDate: '2019-01-15',
-              phone: 3444969555,
-              reports: [
-                {
-                  id: 29,
-                  name: 'Martha Chavez',
-                  firstName: 'Martha',
-                  lastName: 'Chavez',
-                  title: 'Developer Advocate',
-                  active: true,
-                  hireDate: '2019-01-17',
-                  phone: 1407727509
-                },
-                {
-                  id: 30,
-                  name: 'Oren Fox',
-                  firstName: 'Oren',
-                  lastName: 'Fox',
-                  title: 'Developer Advocate',
-                  active: true,
-                  hireDate: '2019-01-01',
-                  phone: 7142842408
-                },
-                {
-                  id: 41,
-                  name: 'Amos Barr',
-                  firstName: 'Amos',
-                  lastName: 'Barr',
-                  title: 'Developer Advocate',
-                  active: true,
-                  hireDate: '2019-01-17',
-                  phone: 9965878405
-                }
-              ]
+              hireDate: '2019-01-01',
+              phone: 7142842408
+            },
+            {
+              id: 41,
+              name: 'Amos Barr',
+              firstName: 'Amos',
+              lastName: 'Barr',
+              title: 'Developer Advocate',
+              active: true,
+              hireDate: '2019-01-17',
+              phone: 9965878405
             }
           ]
         }
