@@ -1,4 +1,5 @@
-export const data: any[] = [
+import { Employee } from './employee.interface';
+const rawData: any[] = [
     {
       id: 1,
       name: 'Daryl Sweeney',
@@ -447,4 +448,18 @@ export const data: any[] = [
         }
       ]
     }
-  ];
+];
+function parseData(data: any[]): Employee[] {
+    return data.map(record => {
+        const children = record.reports;
+        if (children) {
+            record.reports = parseData(children);
+        }
+
+        return {
+            ...record,
+            hireDate: new Date(record.hireDate)
+        };
+    });
+}
+export const data = parseData(rawData);

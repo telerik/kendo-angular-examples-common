@@ -1,7 +1,7 @@
 import { HttpClientModule } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { fakeAsync, TestBed, tick } from '@angular/core/testing';
-import { baseEmployeeServiceTests } from './base-employee-service-tests';
+import { getBergEmployee } from './utils';
 import { EmployeesFlatDataService } from '../../src/main';
 
 const fields = ['managerId', 'id', 'name', 'firstName', 'lastName', 'title', 'active', 'hireDate', 'phone'];
@@ -57,6 +57,50 @@ describe('EmployeesFlatDataService', () => {
         ));
     }));
 
-    //Assert BaseEmployeeService tests for EmployeesFlatDataService instance
-    baseEmployeeServiceTests(() => service);
+    it('should create new item', fakeAsync(() => {
+        let data = null;
+        const emp = getBergEmployee();
+
+        service.save(emp, true, 1000).subscribe((res) => {
+            data = res;
+        });
+
+        tick(999);
+        expect(data).toBe(null);
+
+        tick(1);
+        expect(data[43]).toEqual(emp);
+    }));
+
+    it('should update existing item', fakeAsync(() => {
+        let data = null;
+        const emp = service.readStatic()[0];
+        emp.name = "Test";
+
+        service.save(emp, false, 1000).subscribe((res) => {
+            data = res;
+        });
+
+        tick(999);
+        expect(data).toBe(null);
+
+        tick(1);
+        expect(data[0]).toEqual(emp);
+    }));
+
+    it('should delete an item', fakeAsync(() => {
+        let data = null;
+        const emp = getBergEmployee();
+        const bergId = emp.id;
+        service.remove(emp, 1000).subscribe((res) => {
+            data = res;
+        });
+
+        tick(999);
+        expect(data).toBe(null);
+
+        tick(1);
+        const res = data.find((emp) => emp.id === bergId);
+        expect(res).toBe(undefined);
+    }));
 });
