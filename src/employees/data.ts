@@ -462,4 +462,4 @@ function parseData(data: any[]): Employee[] {
         };
     });
 }
-export const data = parseData(rawData);
+export const data = (() => parseData(rawData))();

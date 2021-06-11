@@ -1,5 +1,4 @@
 import { BehaviorSubject, Observable } from 'rxjs';
-//import { delay } from 'rxjs/operators';
 import { Employee } from './employee.interface';
 
 export abstract class BaseEmployeesService extends BehaviorSubject<Employee[]> {
