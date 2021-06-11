@@ -75,6 +75,18 @@ describe('EmployeesHierDataService', () => {
         expect(data[0].reports[0].reports[2].reports[0]).toEqual(emp);
     }));
 
+    it('should resolve path in the tree', () => {
+        service.resolvePath([0, 0, 2], (container, idx) => {
+            expect(container.length).toBe(5);
+            expect(container[idx].id).toBe(42);
+        });
+    });
+
+    it('should find item in the tree', () => {
+        let path = service.findItem(42);
+        expect(path).toEqual([0, 0, 2]);
+    });
+
     it('should update existing item', fakeAsync(() => {
         let data = null;
         const emp = getBergEmployee();
@@ -101,8 +113,7 @@ describe('EmployeesHierDataService', () => {
         expect(data).toBe(null);
 
         tick(1);
-        let path = service.findItem(emp);
+        let path = service.findItem(emp.id);
         expect(path).toEqual([]);
     }));
-
 });

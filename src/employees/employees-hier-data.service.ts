@@ -7,15 +7,17 @@ import { Employee } from './employee.interface';
 
 @Injectable()
 export class EmployeesHierDataService extends BaseEmployeesService {
+
     public readStatic(): Employee[] {
         return this.data;
     }
+
     public reset(): void {
         this.data = data;
     }
-    public findItem(item: any): any[] {
+
+    public findItem(searchId: number): any[] {
         let path = [];
-        let searchId = item.id;
         function findPath(item: any): boolean {
             if (item.id === searchId) {
                 return true;
@@ -27,11 +29,22 @@ export class EmployeesHierDataService extends BaseEmployeesService {
             }
             return false;
         }
-
-        findPath(this.data);
-
+        findPath(this.getCanonicalData());
         return path;
     }
+
+    public resolvePath(path: number[], modifier: Function): void {
+        let prevStep;
+        let parentRef;
+        let itemRef = this.getCanonicalData();
+        for (let step of path) {
+            parentRef = itemRef;
+            prevStep = step;
+            itemRef = itemRef.reports[step];
+        }
+        modifier(parentRef.reports, prevStep);
+    }
+
     public save(item: any, isNew: boolean, fakeDelay: number = 0, fakeError: boolean = false): Observable<any> {
         let searchId = item.id;
         if (isNew) {
@@ -40,66 +53,49 @@ export class EmployeesHierDataService extends BaseEmployeesService {
         if (fakeError) {
             return throwError(new Error('Error while updating'));
         }
-        function updateItem (data: any , term: number): boolean {
-            if (data.id === term) {
-                return true;
-            }
-            return data.every((emp, idx) => {
-                if (emp.id === term) {
-                    if (isNew) {
-                        data[idx].reports = data[idx].reports || [];
-                        data[idx].reports.push(item);
-                    } else {
-                        data[idx] = item;
-                    }
-                    return false;
+        let path = this.findItem(searchId);
+        if (path.length === 0) {
+            return throwError(new Error('Not found'));
+        } else {
+            this.resolvePath(path, (arrayRef: Employee[], idx: number) => {
+                if (isNew) {
+                    arrayRef[idx].reports = arrayRef[idx].reports || [];
+                    arrayRef[idx].reports.push(item);
                 } else {
-                    return updateItem(emp.reports || [], term);
+                    arrayRef[idx] = item;
                 }
             });
+            return of(this.data).pipe(delay(fakeDelay));
         }
-        let res = updateItem(this.data, searchId);
-
-        if (res !== false) {
-            return throwError(new Error('Not found'));
-        }
-        return of(this.data).pipe(delay(fakeDelay));
     }
 
     public remove(item: Employee, fakeDelay: number = 0, fakeError: boolean = false): Observable<Employee[]> {
         if (fakeError) {
             return throwError(new Error('Error while removing'));
         }
-
-        function removeItem (data: any, term: number): boolean {
-            if (data.id === term) {
-                return true;
-            }
-            return data.every((emp, idx) => {
-                if (emp.id === term) {
-                    if (data[idx].reports) {
-                        let unattached = data[idx].reports.slice(0);
-                        data.splice(idx, 1, ...unattached);
-                    }
-                    data.splice(idx, 1);
-                    return false;
-                } else {
-                    return removeItem(emp.reports || [], term);
-                }
-            });
-        }
-        let res = removeItem(this.data, item.id);
-
-        if (res !== false) {
+        let path = this.findItem(item.id);
+        if (path.length === 0) {
             return throwError(new Error('Not found'));
+        } else {
+            this.resolvePath(path, (arrayRef: Employee[], idx: number) => {
+                if (arrayRef[idx].reports) {
+                    let unattached = arrayRef[idx].reports.slice(0);
+                    arrayRef.splice(idx, 1, ...unattached);
+                }
+                arrayRef.splice(idx, 1);
+            });
+            return of(this.data).pipe(delay(fakeDelay));
         }
-
-        return of(this.data).pipe(delay(fakeDelay));
     }
     public readAsync(fakeDelay: number = 0): Observable<Employee[]> {
         return of(this.data).pipe(delay(fakeDelay));
     }
+
     constructor() {
         super(data);
+    }
+
+    private getCanonicalData(): any {
+        return {"id": null, "reports": this.data};
     }
 }
