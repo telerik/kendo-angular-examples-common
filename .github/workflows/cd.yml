@@ -11,7 +11,7 @@ on:
 
 jobs:
   build:
-    runs-on: kendo
+    runs-on: ubuntu-latest
 
     steps:
       - name: Check out branch
@@ -22,19 +22,14 @@ jobs:
       - name: Install modules
         run: npm install --no-audit --ignore-scripts
 
-      - name: Activate Kendo UI License
-        run: npx kendo-ui-license activate
-        env:
-          KENDO_UI_LICENSE: ${{ secrets.KENDO_UI_LICENSE }}
-
       - name: Build package
         run: npm run build-package
 
       - name: Run unit tests
-        run: npm run test:ci
+        run: npm run test
 
       - name: Publish release
-        run: npx ci-semantic-release
+        run: npm run semantic-release
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
           GH_TOKEN: ${{ secrets.GH_TOKEN }}

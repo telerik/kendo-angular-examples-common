@@ -1,27 +1,21 @@
 {
-  "name": "@progress/kendo-angular-component-base",
+  "name": "@progress/kendo-angular-examples-common",
   "description": "Kendo UI Angular component starter template",
   "author": "Progress",
   "license": "SEE LICENSE IN LICENSE.md",
   "version": "0.0.0-semantically-released",
   "main": "dist/npm/index.js",
-  "module": "dist/fesm5/index.js",
-  "es2015": "dist/fesm2015/index.js",
   "esm5": "dist/es/index.js",
   "esm2015": "dist/es2015/index.js",
   "jsnext:main": "dist/es/index.js",
-  "typings": "dist/es2015/index.d.ts",
   "jsdelivr": "dist/cdn/main.js",
   "unpkg": "dist/cdn/main.js",
+  "typings": "dist/es2015/index.d.ts",
   "sideEffects": false,
   "scripts": {
+    "lint": "gulp lint && tsc --noEmit",
     "test": "jest",
     "test:watch": "jest --watch",
-    "test:ci": "ci-angular-test",
-    "e2e:ci": "ci-angular-e2e",
-    "start": "gulp start",
-    "lint": "gulp lint && gulp lint-docs && tsc --noEmit",
-    "api-check": "gulp api-check",
     "build-package": "gulp build-package",
     "semantic-release": "semantic-release pre && semantic-prerelease publish --public && semantic-release post"
   },
@@ -32,35 +26,24 @@
   "peerDependencies": {
     "@angular/common": "8 - 12",
     "@angular/core": "8 - 12",
-    "@progress/kendo-angular-common": "^2.0.0",
-    "@progress/kendo-licensing": "^1.0.0",
     "rxjs": "^6.4.0"
   },
   "dependencies": {
-    "@progress/kendo-schematics": "^1.1.0",
     "tslib": "^1.9.0"
   },
   "devDependencies": {
     "@angular-devkit/core": "^8.2.0",
     "@angular-devkit/schematics": "^8.2.0",
-    "@angular/animations": "^8.2.0",
     "@angular/common": "^8.2.0",
     "@angular/compiler": "^8.2.0",
     "@angular/compiler-cli": "^8.2.0",
     "@angular/core": "^8.2.0",
-    "@angular/forms": "^8.2.0",
     "@angular/platform-browser": "^8.2.0",
     "@angular/platform-browser-dynamic": "^8.2.0",
-    "@angular/platform-server": "^8.2.0",
-    "@angular/router": "^8.2.0",
-    "@progress/kendo-angular-common": "^2.0.0",
-    "@progress/kendo-angular-e2e": "^2.2.0",
     "@progress/kendo-angular-jest-preset": "^2.0.0",
     "@progress/kendo-angular-tasks": "^18.0.2",
-    "@progress/kendo-licensing": "^1.0.0",
-    "@progress/kendo-theme-default": "^3.0.0",
     "@telerik/semantic-prerelease": "^1.0.0",
-    "@types/jest": "^21.1.8",
+    "@types/jest": "^21.1.10",
     "@types/node": "~8.9.4",
     "@types/zone.js": "0.0.27",
     "codelyzer": "^5.0.0",
@@ -114,9 +97,7 @@
   "homepage": "https://www.telerik.com/kendo-angular-ui/components/",
   "release": {
     "debug": false,
-    "branchTags": {
-      "develop": "dev"
-    },
+    "branchTags": {},
     "fallbackTags": {
       "dev": "latest"
     },
@@ -126,9 +107,7 @@
     "verifyConditions": "@telerik/semantic-prerelease/verifyConditions",
     "verifyRelease": "@telerik/semantic-prerelease/verifyRelease"
   },
-  "schematics": "./schematics/collection.json",
   "files": [
-    "dist",
-    "schematics"
+    "dist"
   ]
 }
