@@ -1,9 +1,9 @@
 {
   "name": "@progress/kendo-angular-examples-common",
   "description": "Kendo UI Angular component starter template",
-  "author": "Progress",
-  "license": "SEE LICENSE IN LICENSE.md",
   "version": "0.0.0-semantically-released",
+  "author": "progress",
+  "license": "SEE LICENSE IN LICENSE.md",
   "main": "dist/npm/index.js",
   "esm5": "dist/es/index.js",
   "esm2015": "dist/es2015/index.js",
@@ -89,10 +89,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/telerik/kendo-angular-component-base.git"
+    "url": "https://github.com/telerik/kendo-angular-examples-common.git"
   },
   "bugs": {
-    "url": "https://github.com/telerik/kendo-angular"
+    "url": "https://github.com/telerik/kendo-angular-examples-common"
   },
   "homepage": "https://www.telerik.com/kendo-angular-ui/components/",
   "release": {
