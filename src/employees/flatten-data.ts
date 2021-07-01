@@ -10,8 +10,7 @@ function flattenTree<T>(idField: string, parentField: string, childrenField: str
             const employee = { ...item };
             delete employee[childrenField];
             employee[parentField] = parentId;
-            let employeeSubTree = [employee, ...visitChildren(item[childrenField], item[idField])];
-            subTree = [...employeeSubTree, ...subTree];
+            subTree = [...subTree, employee, ...visitChildren(item[childrenField], item[idField])];
         }
         return subTree;
     }

@@ -24,15 +24,25 @@ describe('flatten-data', () => {
     });
 
     it('flattens tree with multiple roots', () => {
-        const tree = [{
-            id: 1
-        }, {
-            id: 2,
-            reports: [{
-                id: 3
-            }]
-        }];
+        const tree = [
+            {
+                id: 1,
+                reports: [{
+                    id: 4,
+                    reports: [{
+                        id: 5
+                    }]
+                }]
+            },
+            {
+                id: 2,
+                reports: [{
+                    id: 3
+                }]
+            }
+        ];
 
-        expect(flattenData(tree)).toEqual([{"id": 2, "managerId": null}, {"id": 3, "managerId": 2}, {"id": 1, "managerId": null}]);
+
+        expect(flattenData(tree)).toEqual( [{"id": 1, "managerId": null}, {"id": 4, "managerId": 1}, {"id": 5, "managerId": 4}, {"id": 2, "managerId": null}, {"id": 3, "managerId": 2}]);
     });
 });
