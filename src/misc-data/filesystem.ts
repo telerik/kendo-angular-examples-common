@@ -1283,4 +1283,4 @@ export const filesystem: File[] = [
       {type: 'file', id: nextId(), name: 'tslint.json', size: 1954, time: new Date('2019-12-18T15:06:11')}
     ]}
   ]}
-]
+];
