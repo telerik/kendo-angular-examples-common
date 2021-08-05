@@ -3,7 +3,7 @@ export interface Task {
     id: number;
     start: Date;
     end: Date;
-    completionRatio: true;
+    completionRatio?: number;
     children?: Task[];
 }
 
