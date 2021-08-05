@@ -1,4 +1,6 @@
-export const tasks = [
+import { Task } from './task.interface';
+
+export const tasks: Task:[] = [
     {
         id: 1,
         title: "Milestone",
@@ -11,7 +13,6 @@ export const tasks = [
         start: new Date("2014-06-02T00:00:00.000Z"),
         end: new Date("2014-07-12T00:00:00.000Z"),
         completionRatio: 0.45708333333333334,
-        isExpanded: true,
         children: [
             {
                 id: 11,
@@ -19,7 +20,6 @@ export const tasks = [
                 start: new Date("2014-06-02T00:00:00.000Z"),
                 end: new Date("2014-06-07T00:00:00.000Z"),
                 completionRatio: 0.5766666666666667,
-                isExpanded: true,
                 children: [
                     {
                         id: 19,
@@ -27,7 +27,6 @@ export const tasks = [
                         start: new Date("2014-06-02T00:00:00.000Z"),
                         end: new Date("2014-06-04T00:00:00.000Z"),
                         completionRatio: 0.25,
-                        isExpanded: true
                     },
                     {
                         id: 20,
@@ -35,7 +34,6 @@ export const tasks = [
                         start: new Date("2014-06-02T00:00:00.000Z"),
                         end: new Date("2014-06-03T02:00:00.000Z"),
                         completionRatio: 0.82,
-                        isExpanded: true
                     },
                     {
                         id: 39,
@@ -43,7 +41,6 @@ export const tasks = [
                         start: new Date("2014-06-04T00:00:00.000Z"),
                         end: new Date("2014-06-07T00:00:00.000Z"),
                         completionRatio: 0.66,
-                        isExpanded: true
                     }
                 ]
             },
@@ -53,7 +50,6 @@ export const tasks = [
                 start: new Date("2014-06-09T00:00:00.000Z"),
                 end: new Date("2014-06-14T00:00:00.000Z"),
                 completionRatio: 0.6,
-                isExpanded: true,
                 children: [
                     {
                         id: 22,
@@ -61,7 +57,6 @@ export const tasks = [
                         start: new Date("2014-06-09T00:00:00.000Z"),
                         end: new Date("2014-06-11T00:00:00.000Z"),
                         completionRatio: 0.56,
-                        isExpanded: true
                     },
                     {
                         id: 23,
@@ -69,7 +64,6 @@ export const tasks = [
                         start: new Date("2014-06-11T00:00:00.000Z"),
                         end: new Date("2014-06-14T00:00:00.000Z"),
                         completionRatio: 0.64,
-                        isExpanded: true
                     }
                 ]
             },
@@ -79,7 +73,6 @@ export const tasks = [
                 start: new Date("2014-06-11T00:00:00.000Z"),
                 end: new Date("2014-07-02T00:00:00.000Z"),
                 completionRatio: 0.77,
-                isExpanded: true,
                 children: [
                     {
                         id: 24,
@@ -87,7 +80,6 @@ export const tasks = [
                         start: new Date("2014-06-11T00:00:00.000Z"),
                         end: new Date("2014-06-17T00:00:00.000Z"),
                         completionRatio: 0.77,
-                        isExpanded: true
                     },
                     {
                         id: 26,
@@ -95,7 +87,6 @@ export const tasks = [
                         start: new Date("2014-06-17T00:00:00.000Z"),
                         end: new Date("2014-06-18T00:00:00.000Z"),
                         completionRatio: 0.82,
-                        isExpanded: true
                     },
                     {
                         id: 27,
@@ -103,7 +94,6 @@ export const tasks = [
                         start: new Date("2014-06-18T00:00:00.000Z"),
                         end: new Date("2014-06-24T00:00:00.000Z"),
                         completionRatio: 0.5,
-                        isExpanded: true
                     },
                     {
                         id: 28,
@@ -111,7 +101,6 @@ export const tasks = [
                         start: new Date("2014-06-18T00:00:00.000Z"),
                         end: new Date("2014-06-27T00:00:00.000Z"),
                         completionRatio: 0.68,
-                        isExpanded: true
                     },
                     {
                         id: 29,
@@ -119,7 +108,6 @@ export const tasks = [
                         start: new Date("2014-06-27T00:00:00.000Z"),
                         end: new Date("2014-07-02T00:00:00.000Z"),
                         completionRatio: 0.6,
-                        isExpanded: true
                     }
                 ]
             },
@@ -129,7 +117,6 @@ export const tasks = [
                 start: new Date("2014-06-30T00:00:00.000Z"),
                 end: new Date("2014-07-05T00:00:00.000Z"),
                 completionRatio: 0.52,
-                isExpanded: true,
                 children: [
                     {
                         id: 32,
@@ -137,7 +124,6 @@ export const tasks = [
                         start: new Date("2014-06-30T00:00:00.000Z"),
                         end: new Date("2014-07-05T00:00:00.000Z"),
                         completionRatio: 0.94,
-                        isExpanded: true
                     },
                     {
                         id: 33,
@@ -145,7 +131,6 @@ export const tasks = [
                         start: new Date("2014-06-30T00:00:00.000Z"),
                         end: new Date("2014-07-05T00:00:00.000Z"),
                         completionRatio: 0.1,
-                        isExpanded: true
                     }
                 ]
             },
@@ -155,7 +140,6 @@ export const tasks = [
                 start: new Date("2014-07-12T00:00:00.000Z"),
                 end: new Date("2014-07-12T00:00:00.000Z"),
                 completionRatio: 0,
-                isExpanded: true
             },
             {
                 id: 18,
@@ -163,7 +147,6 @@ export const tasks = [
                 start: new Date("2014-06-02T00:00:00.000Z"),
                 end: new Date("2014-06-02T00:00:00.000Z"),
                 completionRatio: 0.23,
-                isExpanded: true
             },
             {
                 id: 30,
@@ -171,7 +154,6 @@ export const tasks = [
                 start: new Date("2014-06-23T00:00:00.000Z"),
                 end: new Date("2014-07-05T00:00:00.000Z"),
                 completionRatio: 0.14,
-                isExpanded: true,
                 children: [
                     {
                         id: 34,
@@ -179,7 +161,6 @@ export const tasks = [
                         start: new Date("2014-06-23T00:00:00.000Z"),
                         end: new Date("2014-06-26T00:00:00.000Z"),
                         completionRatio: 0.28,
-                        isExpanded: true
                     },
                     {
                         id: 35,
@@ -187,7 +168,6 @@ export const tasks = [
                         start: new Date("2014-06-26T00:00:00.000Z"),
                         end: new Date("2014-07-05T00:00:00.000Z"),
                         completionRatio: 0,
-                        isExpanded: true
                     }
                 ]
             },
@@ -197,7 +177,6 @@ export const tasks = [
                 start: new Date("2014-06-30T00:00:00.000Z"),
                 end: new Date("2014-07-12T00:00:00.000Z"),
                 completionRatio: 0.82,
-                isExpanded: false,
                 children: [
                     {
                         id: 36,
@@ -205,7 +184,6 @@ export const tasks = [
                         start: new Date("2014-06-30T00:00:00.000Z"),
                         end: new Date("2014-07-02T00:00:00.000Z"),
                         completionRatio: 0.94,
-                        isExpanded: true
                     },
                     {
                         id: 37,
@@ -213,7 +191,6 @@ export const tasks = [
                         start: new Date("2014-07-02T00:00:00.000Z"),
                         end: new Date("2014-07-05T00:00:00.000Z"),
                         completionRatio: 0.8,
-                        isExpanded: true
                     },
                     {
                         id: 38,
@@ -221,7 +198,6 @@ export const tasks = [
                         start: new Date("2014-07-03T00:00:00.000Z"),
                         end: new Date("2014-07-12T00:00:00.000Z"),
                         completionRatio: 0.72,
-                        isExpanded: true
                     }
                 ]
             }

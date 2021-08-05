@@ -3,7 +3,7 @@ import { File } from './file.interface';
 let counter = 0;
 const nextId = () => counter++;
 
-export const filesystem: File[] = [
+export const files: File[] = [
   {type: 'file', id: nextId(), name: 'LICENSE.md', size: 636, time: new Date('2019-12-18T15:06:11')},
   {type: 'file', id: nextId(), name: 'README.md', size: 4460, time: new Date('2019-12-18T15:06:11')},
   {type: 'file', id: nextId(), name: 'SUPPORT.md', size: 3181, time: new Date('2019-12-18T15:06:11')},
