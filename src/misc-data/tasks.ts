@@ -8,7 +8,6 @@ export const tasks = [
     {
         id: 7,
         title: "Software validation, research and implementation",
-        orderId: 0,
         start: new Date("2014-06-02T00:00:00.000Z"),
         end: new Date("2014-07-12T00:00:00.000Z"),
         completionRatio: 0.45708333333333334,
@@ -17,7 +16,6 @@ export const tasks = [
             {
                 id: 11,
                 title: "Research",
-                orderId: 1,
                 start: new Date("2014-06-02T00:00:00.000Z"),
                 end: new Date("2014-06-07T00:00:00.000Z"),
                 completionRatio: 0.5766666666666667,
@@ -26,7 +24,6 @@ export const tasks = [
                     {
                         id: 19,
                         title: "Validation with Customers",
-                        orderId: 0,
                         start: new Date("2014-06-02T00:00:00.000Z"),
                         end: new Date("2014-06-04T00:00:00.000Z"),
                         completionRatio: 0.25,
@@ -35,7 +32,6 @@ export const tasks = [
                     {
                         id: 20,
                         title: "Market Research",
-                        orderId: 1,
                         start: new Date("2014-06-02T00:00:00.000Z"),
                         end: new Date("2014-06-03T02:00:00.000Z"),
                         completionRatio: 0.82,
@@ -44,7 +40,6 @@ export const tasks = [
                     {
                         id: 39,
                         title: "Functional and Technical Specification",
-                        orderId: 2,
                         start: new Date("2014-06-04T00:00:00.000Z"),
                         end: new Date("2014-06-07T00:00:00.000Z"),
                         completionRatio: 0.66,
@@ -55,7 +50,6 @@ export const tasks = [
             {
                 id: 12,
                 title: "Design",
-                orderId: 2,
                 start: new Date("2014-06-09T00:00:00.000Z"),
                 end: new Date("2014-06-14T00:00:00.000Z"),
                 completionRatio: 0.6,
@@ -64,7 +58,6 @@ export const tasks = [
                     {
                         id: 22,
                         title: "UI Design",
-                        orderId: 0,
                         start: new Date("2014-06-09T00:00:00.000Z"),
                         end: new Date("2014-06-11T00:00:00.000Z"),
                         completionRatio: 0.56,
@@ -73,7 +66,6 @@ export const tasks = [
                     {
                         id: 23,
                         title: "HTML Prototype",
-                        orderId: 1,
                         start: new Date("2014-06-11T00:00:00.000Z"),
                         end: new Date("2014-06-14T00:00:00.000Z"),
                         completionRatio: 0.64,
@@ -84,7 +76,6 @@ export const tasks = [
             {
                 id: 13,
                 title: "Implementation",
-                orderId: 3,
                 start: new Date("2014-06-11T00:00:00.000Z"),
                 end: new Date("2014-07-02T00:00:00.000Z"),
                 completionRatio: 0.77,
@@ -93,7 +84,6 @@ export const tasks = [
                     {
                         id: 24,
                         title: "Prototype",
-                        orderId: 0,
                         start: new Date("2014-06-11T00:00:00.000Z"),
                         end: new Date("2014-06-17T00:00:00.000Z"),
                         completionRatio: 0.77,
@@ -102,7 +92,6 @@ export const tasks = [
                     {
                         id: 26,
                         title: "Architecture",
-                        orderId: 1,
                         start: new Date("2014-06-17T00:00:00.000Z"),
                         end: new Date("2014-06-18T00:00:00.000Z"),
                         completionRatio: 0.82,
@@ -111,7 +100,6 @@ export const tasks = [
                     {
                         id: 27,
                         title: "Data Layer",
-                        orderId: 2,
                         start: new Date("2014-06-18T00:00:00.000Z"),
                         end: new Date("2014-06-24T00:00:00.000Z"),
                         completionRatio: 0.5,
@@ -120,7 +108,6 @@ export const tasks = [
                     {
                         id: 28,
                         title: "Unit Tests",
-                        orderId: 4,
                         start: new Date("2014-06-18T00:00:00.000Z"),
                         end: new Date("2014-06-27T00:00:00.000Z"),
                         completionRatio: 0.68,
@@ -129,7 +116,6 @@ export const tasks = [
                     {
                         id: 29,
                         title: "UI and Interaction",
-                        orderId: 3,
                         start: new Date("2014-06-27T00:00:00.000Z"),
                         end: new Date("2014-07-02T00:00:00.000Z"),
                         completionRatio: 0.6,
@@ -140,7 +126,6 @@ export const tasks = [
             {
                 id: 14,
                 title: "Testing",
-                orderId: 4,
                 start: new Date("2014-06-30T00:00:00.000Z"),
                 end: new Date("2014-07-05T00:00:00.000Z"),
                 completionRatio: 0.52,
@@ -149,7 +134,6 @@ export const tasks = [
                     {
                         id: 32,
                         title: "Integration Testing",
-                        orderId: 0,
                         start: new Date("2014-06-30T00:00:00.000Z"),
                         end: new Date("2014-07-05T00:00:00.000Z"),
                         completionRatio: 0.94,
@@ -158,7 +142,6 @@ export const tasks = [
                     {
                         id: 33,
                         title: "Load Testing",
-                        orderId: 1,
                         start: new Date("2014-06-30T00:00:00.000Z"),
                         end: new Date("2014-07-05T00:00:00.000Z"),
                         completionRatio: 0.1,
@@ -169,7 +152,6 @@ export const tasks = [
             {
                 id: 17,
                 title: "Release",
-                orderId: 7,
                 start: new Date("2014-07-12T00:00:00.000Z"),
                 end: new Date("2014-07-12T00:00:00.000Z"),
                 completionRatio: 0,
@@ -178,7 +160,6 @@ export const tasks = [
             {
                 id: 18,
                 title: "Project Kickoff",
-                orderId: 0,
                 start: new Date("2014-06-02T00:00:00.000Z"),
                 end: new Date("2014-06-02T00:00:00.000Z"),
                 completionRatio: 0.23,
@@ -187,7 +168,6 @@ export const tasks = [
             {
                 id: 30,
                 title: "Documentation",
-                orderId: 5,
                 start: new Date("2014-06-23T00:00:00.000Z"),
                 end: new Date("2014-07-05T00:00:00.000Z"),
                 completionRatio: 0.14,
@@ -196,7 +176,6 @@ export const tasks = [
                     {
                         id: 34,
                         title: "Structure",
-                        orderId: 0,
                         start: new Date("2014-06-23T00:00:00.000Z"),
                         end: new Date("2014-06-26T00:00:00.000Z"),
                         completionRatio: 0.28,
@@ -205,7 +184,6 @@ export const tasks = [
                     {
                         id: 35,
                         title: "Articles",
-                        orderId: 1,
                         start: new Date("2014-06-26T00:00:00.000Z"),
                         end: new Date("2014-07-05T00:00:00.000Z"),
                         completionRatio: 0,
@@ -216,7 +194,6 @@ export const tasks = [
             {
                 id: 31,
                 title: "Demos",
-                orderId: 6,
                 start: new Date("2014-06-30T00:00:00.000Z"),
                 end: new Date("2014-07-12T00:00:00.000Z"),
                 completionRatio: 0.82,
@@ -225,7 +202,6 @@ export const tasks = [
                     {
                         id: 36,
                         title: "Structure",
-                        orderId: 0,
                         start: new Date("2014-06-30T00:00:00.000Z"),
                         end: new Date("2014-07-02T00:00:00.000Z"),
                         completionRatio: 0.94,
@@ -234,7 +210,6 @@ export const tasks = [
                     {
                         id: 37,
                         title: "Design",
-                        orderId: 1,
                         start: new Date("2014-07-02T00:00:00.000Z"),
                         end: new Date("2014-07-05T00:00:00.000Z"),
                         completionRatio: 0.8,
@@ -243,7 +218,6 @@ export const tasks = [
                     {
                         id: 38,
                         title: "Demos",
-                        orderId: 2,
                         start: new Date("2014-07-03T00:00:00.000Z"),
                         end: new Date("2014-07-12T00:00:00.000Z"),
                         completionRatio: 0.72,
