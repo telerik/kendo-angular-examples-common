@@ -3,8 +3,7 @@ import { Observable, of , throwError} from 'rxjs';
 import { delay } from 'rxjs/operators';
 import { BaseEmployeesService } from './base-employees.service';
 import { Employee } from './employee.interface';
-import { data } from './data';
-import { flattenData } from './flatten-data';
+import { getFlatEmployees } from './flat-data';
 
 @Injectable()
 export class EmployeesFlatDataService extends BaseEmployeesService {
@@ -15,7 +14,7 @@ export class EmployeesFlatDataService extends BaseEmployeesService {
         return this.data.findIndex(d => d.id === item.id);
     }
     public reset(): void {
-        this.data = flattenData(data);
+        this.data = getFlatEmployees();
     }
 
     public readAsync(query: any = {skip: 0, take: 10}, fakeDelay: number = 0 ): Observable<Employee[]> {
@@ -55,6 +54,6 @@ export class EmployeesFlatDataService extends BaseEmployeesService {
     }
 
     constructor() {
-        super(flattenData(data));
+        super(getFlatEmployees());
     }
 }

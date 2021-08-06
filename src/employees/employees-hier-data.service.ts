@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Observable, of, throwError } from 'rxjs';
 import { delay } from 'rxjs/operators';
 import { BaseEmployeesService } from './base-employees.service';
-import { data } from './data';
+import { getEmployees } from './data';
 import { Employee } from './employee.interface';
 
 @Injectable()
@@ -13,7 +13,7 @@ export class EmployeesHierDataService extends BaseEmployeesService {
     }
 
     public reset(): void {
-        this.data = data;
+        this.data = getEmployees();
     }
 
     public findItem(searchId: number): any[] {
@@ -92,7 +92,7 @@ export class EmployeesHierDataService extends BaseEmployeesService {
     }
 
     constructor() {
-        super(data);
+        super(getEmployees());
     }
 
     private getCanonicalData(): any {

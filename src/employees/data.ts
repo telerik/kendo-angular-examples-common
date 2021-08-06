@@ -449,7 +449,7 @@ const rawData: any[] = [
       ]
     }
 ];
-function parseData(data: any[]): Employee[] {
+function parseData(data: Array<Employee>): Employee[] {
     return data.map(record => {
         const children = record.reports;
         if (children) {
@@ -462,4 +462,4 @@ function parseData(data: any[]): Employee[] {
         };
     });
 }
-export const data = (() => parseData(rawData))();
+export const getEmployees = (): Array<Employee> => parseData(rawData);
