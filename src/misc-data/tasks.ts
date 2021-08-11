@@ -204,7 +204,4 @@ const rawData: any[] = [
         ]
     }
 ];
-
-export function getTasks(): Task[] {
-    return rawData;
-}
+export const getTasks: Function = (): Task[] => rawData;

@@ -4,6 +4,4 @@ import { Task } from './task.interface';
 
 const flattenData = flattenTree<any>('id', 'parentId', 'children');
 const flatData = flattenData(getTasks());
-export function getFlatTasks (): Task[] {
-    return flatData;
-}
+export const getFlatTasks: Function = (): Task[] => flatData;

@@ -1,4 +1,5 @@
 import { Employee } from './employee.interface';
+
 const rawData: any[] = [
     {
       id: 1,
@@ -449,6 +450,7 @@ const rawData: any[] = [
       ]
     }
 ];
+
 function parseData(data: Array<Employee>): Employee[] {
     return data.map(record => {
         const children = record.reports;
@@ -462,4 +464,5 @@ function parseData(data: Array<Employee>): Employee[] {
         };
     });
 }
-export const getEmployees = (): Array<Employee> => parseData(rawData);
+
+export const getEmployees: Function = (): Array<Employee> => parseData(rawData);
