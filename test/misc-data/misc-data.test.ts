@@ -8,7 +8,7 @@ describe("misc-data", () => {
         expect(tasks[1].children[1]).toBeDefined();
         tasks[1].children[1].title = null;
         tasks1 = getTasks();
-        expect(tasks1[1].children[1]).not.toEqual(null);
+        expect(tasks1[1].children[1].title).not.toEqual(null);
 
     });
 
