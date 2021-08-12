@@ -205,4 +205,4 @@ export const getTasks: Function = (): Task[] => {
             ]
         }
     ];
-}
+};
