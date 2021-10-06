@@ -1,12 +1,12 @@
 import { Injectable } from '@angular/core';
 import { Observable, of, throwError } from 'rxjs';
 import { delay } from 'rxjs/operators';
-import { BaseEmployeesService } from './base-employees.service';
+import { BaseService } from '../base.service';
 import { getEmployees } from './data';
 import { Employee } from './employee.interface';
 
 @Injectable()
-export class EmployeesHierDataService extends BaseEmployeesService {
+export class EmployeesHierDataService extends BaseService<Employee> {
 
     public readStatic(): Employee[] {
         return this.data;
