@@ -3,9 +3,9 @@ import { Component } from '@angular/core';
 import { fakeAsync, TestBed, tick } from '@angular/core/testing';
 import { ProductsService, getProducts } from '../../src/main';
 
-const fields = ['managerId', 'id', 'name', 'firstName', 'lastName', 'title', 'active', 'hireDate', 'phone'];
+const fields = ['ProductID', 'CategoryID', 'ProductName', 'Discontinued', 'UnitsInStock'];
 
-xdescribe('ProductsService', () => {
+describe('ProductsService', () => {
     @Component({
         template: ''
     })
@@ -68,7 +68,7 @@ xdescribe('ProductsService', () => {
         expect(data).toBe(null);
 
         tick(1);
-        expect(data[43]).toEqual(product);
+        expect(data[77]).toEqual(product);
     }));
 
     it('should update existing item', fakeAsync(() => {
