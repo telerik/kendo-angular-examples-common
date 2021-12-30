@@ -19,6 +19,10 @@ jobs:
         with:
           fetch-depth: 0 # Fetch all branches
 
+      - uses: actions/setup-node@v2
+        with:
+          node-version: '14'
+
       - name: Install modules
         run: npm install --no-audit --ignore-scripts
 

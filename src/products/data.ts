@@ -1,4 +1,4 @@
-import { Product } from './product.interface';
+import { Product, Category } from './product.interface';
 
 export const getProducts: Function = (): Product[] => {
     return [{
@@ -1234,4 +1234,40 @@ export const getProducts: Function = (): Product[] => {
             "Description" : "Sweet and savory sauces, relishes, spreads, and seasonings"
         }
     }];
+};
+export const getCategories: Function = (): Category[] => {
+    return [{
+            "CategoryID": 1,
+            "CategoryName": "Beverages",
+            "Description": "Soft drinks, coffees, teas, beers, and ales"
+        }, {
+            "CategoryID": 2,
+            "CategoryName": "Condiments",
+            "Description": "Sweet and savory sauces, relishes, spreads, and seasonings"
+        }, {
+            "CategoryID": 3,
+            "CategoryName": "Confections",
+            "Description": "Desserts, candies, and sweet breads"
+        }, {
+            "CategoryID": 4,
+            "CategoryName": "Dairy Products",
+            "Description": "Cheeses"
+        }, {
+            "CategoryID": 5,
+            "CategoryName": "Grains/Cereals",
+            "Description": "Breads, crackers, pasta, and cereal"
+        }, {
+            "CategoryID": 6,
+            "CategoryName": "Meat/Poultry",
+            "Description": "Prepared meats"
+        }, {
+            "CategoryID": 7,
+            "CategoryName": "Produce",
+            "Description": "Dried fruit and bean curd"
+        }, {
+            "CategoryID": 8,
+            "CategoryName": "Seafood",
+            "Description": "Seaweed and fish"
+        }
+    ];
 };
