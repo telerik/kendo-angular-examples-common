@@ -1,5 +1,4 @@
-import { getProducts, Product, Category } from '../../src/products';
-import {getCategories} from '../../src/products/data';
+import { getProducts, getCategories, Product, Category } from '../../src/products';
 
 describe("products data", () => {
 
