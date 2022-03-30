@@ -49,6 +49,6 @@ export function getCountries(): string[] {
         "Turkey",
         "Ukraine",
         "United Kingdom",
-        "Vatican City",
+        "Vatican City"
     ];
 }
