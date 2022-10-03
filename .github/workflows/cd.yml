@@ -30,10 +30,14 @@ jobs:
         run: npm run build-package
 
       - name: Run unit tests
-        run: npm run test
+        run: npm run test:ci --if-present
 
       - name: Publish release
-        run: npx ci-semantic-release
+        run: |
+          cd dist
+          ln -s ../node_modules ./
+          ln -s ../.git ./
+          npx ci-semantic-release
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
           GH_TOKEN: ${{ secrets.GH_TOKEN }}

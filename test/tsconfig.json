@@ -1,8 +1,11 @@
 {
   "extends": "../tsconfig",
   "compilerOptions": {
-    "target": "ES6",
-    "types": [ "jest", "zone.js" ]
+    "types": [
+      "jest",
+      "zone.js"
+    ],
+    "esModuleInterop": true
   },
   "include": [
     "../src/**/*.ts",

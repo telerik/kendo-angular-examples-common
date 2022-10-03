@@ -1,0 +1,14 @@
+{
+  "extends": "../tsconfig.json",
+  "include": [
+    "./**/*.ts"
+  ],
+  "compilerOptions": {
+    "outDir": "../dist/out-tsc-e2e",
+    "target": "es2017",
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "lib": ["es2018", "dom"],
+    "types": [ "node", "jest", "selenium-webdriver", "zone.js" ]
+  }
+}

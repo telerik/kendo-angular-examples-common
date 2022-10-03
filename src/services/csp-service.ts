@@ -3,20 +3,22 @@ import { Injectable, Optional } from '@angular/core';
 
 import { filter } from 'rxjs/operators';
 
+// tslint:disable: no-console
+
 export class CSPConfig {
-    pathFilters = [/^\/e2e\//];
-    defaultSrc = ["'self'"];
-    scriptSrc = ["'unsafe-eval'", "'self'", 'https://demos.telerik.com'];
-    fontSrc = ["'self'", 'data:'];
-    styleSrc = ["'self'", 'https://maxcdn.bootstrapcdn.com'];
-    connectSrc = ["'self'", 'https://odatasampleservices.azurewebsites.net'];
-    imgSrc = ["'self'", 'data:'];
+    public pathFilters: RegExp[] = [/^\/e2e\//];
+    public defaultSrc: string[] = ["'self'"];
+    public scriptSrc: string[] = ["'unsafe-eval'", "'self'", 'https://demos.telerik.com'];
+    public fontSrc: string[] = ["'self'", 'data:'];
+    public styleSrc: string[] = ["'self'", 'https://maxcdn.bootstrapcdn.com'];
+    public connectSrc: string[] = ["'self'", 'https://odatasampleservices.azurewebsites.net'];
+    public imgSrc: string[] = ["'self'", 'data:'];
 
     constructor (init: Partial<CSPConfig> = {}) {
         Object.assign(this, init);
     }
 
-    get policy(): string {
+    public get policy(): string {
         return [
             'default-src ' + this.defaultSrc.join(' '),
             'script-src ' + this.scriptSrc.join(' '),
@@ -49,27 +51,27 @@ export class CSPService {
             } else if (params.get('csp') === 'true' || match) {
                 params.append('csp', 'false');
                 console.info('Content Security Policy: Apply settings for e2e tests\n' + this.config.policy.replace(/;/g, '\n'));
-                console.info(`Navigate to ${altURL} to disable CSP.`)
+                console.info(`Navigate to ${altURL} to disable CSP.`);
 
                 this.applyCSP();
             }
         });
     }
 
-    private matchURL(url: string) {
+    private matchURL(url: string): boolean {
         return this.config.pathFilters.reduce((match, filter) =>
             match || url.match(filter) !== null
         , false);
     }
 
-    private applyCSP() {
+    private applyCSP(): void {
         const meta = document.createElement('meta');
         meta.setAttribute('http-equiv', 'Content-Security-Policy');
         meta.setAttribute('content', this.config.policy);
         document.head.append(meta);
     }
 
-    private clearCSP() {
+    private clearCSP(): void {
         const meta = document.querySelector('meta[http-equiv="Content-Security-Policy"]');
         if (meta) {
             console.info('Content Security Policy: Reset');

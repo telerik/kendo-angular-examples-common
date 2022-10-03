@@ -1,8 +1,0 @@
-{
-  "extends": [
-    "@progress/kendo-angular-tasks/tslint/base.json"
-  ],
-  "rules": {
-    "variable-name": [false]
-  }
-}
