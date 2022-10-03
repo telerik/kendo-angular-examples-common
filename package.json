@@ -24,8 +24,9 @@
     "Angular"
   ],
   "peerDependencies": {
-    "@angular/common": "8 - 12",
-    "@angular/core": "8 - 12",
+    "@angular/common": "8 - 14",
+    "@angular/core": "8 - 14",
+    "@angular/router": "8 - 14",
     "rxjs": "^6.4.0"
   },
   "dependencies": {
