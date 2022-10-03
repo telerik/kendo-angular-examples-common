@@ -1,28 +1,47 @@
 {
   "compilerOptions": {
-    "target": "es5",
-    "module": "commonjs",
-    "lib": ["es2015", "dom"],
-    "types": [ "jest", "zone.js" ],
-
+    "baseUrl": "./",
+    "outDir": "./dist/out-tsc",
+    "target": "es2017",
+    "module": "es2020",
+    "lib": [
+      "es2018",
+      "dom"
+    ],
+    "types": [
+      "jest",
+      "zone.js",
+      "node"
+    ],
     "declaration": false,
-    "emitDecoratorMetadata": true,
+    "downlevelIteration": true,
     "experimentalDecorators": true,
+    "forceConsistentCasingInFileNames": true,
     "importHelpers": true,
+    "moduleResolution": "node",
+    "noFallthroughCasesInSwitch": true,
     "noImplicitAny": false,
+    "noImplicitReturns": false,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "removeComments": false
+    "removeComments": false,
+    "sourceMap": false,
+    "strict": false,
+    "skipLibCheck": true
   },
   "files": [
     "src/main.ts"
   ],
   "include": [
-    "src/**/*.ts",
-    "test/**/*.ts",
-    "e2e/**/*.ts"
+    "src/**/*.ts"
   ],
   "exclude": [
     "node_modules"
-  ]
+  ],
+  "angularCompilerOptions": {
+    "compilationMode": "partial",
+    "strictInjectionParameters": true,
+    "strictInputAccessModifiers": true,
+    "strictTemplates": true
+  }
 }

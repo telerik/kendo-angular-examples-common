@@ -1,2 +1,1 @@
-import '@progress/kendo-angular-jest-preset';
-
+import '@progress/kendo-angular-tasks/jest/setup';

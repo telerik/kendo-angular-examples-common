@@ -13,55 +13,56 @@
   "typings": "dist/es2015/index.d.ts",
   "sideEffects": false,
   "scripts": {
-    "lint": "gulp lint && tsc --noEmit",
-    "test": "jest",
-    "test:watch": "jest --watch",
+    "build-cdn": "gulp build-cdn",
     "build-package": "gulp build-package",
-    "semantic-release": "semantic-release pre && semantic-prerelease publish --public && semantic-release post"
+    "test": "jest",
+    "test:ci": "ci-angular-test",
+    "test:watch": "jest --watch",
+    "lint": "eslint . --quiet",
+    "prepare": "npx ngcc"
   },
   "keywords": [
     "Kendo UI",
     "Angular"
   ],
   "peerDependencies": {
-    "@angular/common": "8 - 14",
-    "@angular/core": "8 - 14",
-    "@angular/router": "8 - 14",
+    "@angular/common": "12 - 14",
+    "@angular/core": "12 - 14",
+    "@angular/router": "12 - 14",
     "rxjs": "^6.4.0"
   },
   "dependencies": {
-    "tslib": "^1.9.0"
+    "tslib": "^2.3.1"
   },
   "devDependencies": {
-    "@angular-devkit/core": "^8.2.0",
-    "@angular-devkit/schematics": "^8.2.0",
-    "@angular/common": "^8.2.0",
-    "@angular/compiler": "^8.2.0",
-    "@angular/compiler-cli": "^8.2.0",
-    "@angular/core": "^8.2.0",
-    "@angular/platform-browser": "^8.2.0",
-    "@angular/platform-browser-dynamic": "^8.2.0",
-    "@progress/kendo-angular-jest-preset": "^2.0.0",
-    "@progress/kendo-angular-tasks": "^18.0.2",
-    "@telerik/semantic-prerelease": "^1.0.0",
-    "@types/jest": "^21.1.10",
-    "@types/node": "~8.9.4",
-    "@types/zone.js": "0.0.27",
-    "codelyzer": "^5.0.0",
-    "core-js": "^2.2.2",
+    "@angular-devkit/core": "^12.2.7",
+    "@angular-devkit/schematics": "^12.2.7",
+    "@angular/animations": "^12.2.7",
+    "@angular/common": "^12.2.7",
+    "@angular/compiler": "^12.2.7",
+    "@angular/compiler-cli": "^12.2.7",
+    "@angular/core": "^12.2.7",
+    "@angular/forms": "^12.2.7",
+    "@angular/localize": "^12.2.7",
+    "@angular/platform-browser": "^12.2.7",
+    "@angular/platform-browser-dynamic": "^12.2.7",
+    "@angular/platform-server": "^12.2.7",
+    "@angular/router": "^12.2.7",
+    "@progress/kendo-angular-tasks": "^20.0.11",
+    "@progress/semantic-prerelease": "^3.0.0",
+    "@types/jest": "ts4.3",
+    "@types/node": "ts4.3",
+    "core-js": "^3.18.0",
     "cz-conventional-changelog": "^1.1.5",
     "ghooks": "^1.0.3",
     "gulp": "^4.0.0",
-    "jest-cli": "^21.2.1",
-    "jest-junit": "^8.0.0",
-    "ts-jest": "^21.2.1",
-    "rxjs": "~6.4.0",
-    "rxjs-tslint-rules": "^4.23.1",
+    "jest": "^27.2.2",
+    "jest-junit": "^12.3.0",
+    "rxjs": "^6.5.3",
     "semantic-release": "^6.3.6",
-    "tslint": "^5.0.0",
-    "typescript": "~3.4.2",
+    "typescript": "~4.3.4",
     "validate-commit-msg": "^1.1.1",
-    "zone.js": "~0.9.1"
+    "zone.js": "~0.11.4"
   },
   "config": {
     "commitizen": {
@@ -86,9 +87,6 @@
       "maxSubjectLength": 100
     }
   },
-  "jest": {
-    "preset": "@progress/kendo-angular-jest-preset"
-  },
   "repository": {
     "type": "git",
     "url": "https://github.com/telerik/kendo-angular-examples-common.git"
@@ -103,11 +101,11 @@
     "fallbackTags": {
       "dev": "latest"
     },
-    "analyzeCommits": "@telerik/semantic-prerelease/analyzeCommits",
-    "generateNotes": "@telerik/semantic-prerelease/generateNotes",
-    "getLastRelease": "@telerik/semantic-prerelease/getLastRelease",
-    "verifyConditions": "@telerik/semantic-prerelease/verifyConditions",
-    "verifyRelease": "@telerik/semantic-prerelease/verifyRelease"
+    "analyzeCommits": "@progress/semantic-prerelease/analyzeCommits",
+    "generateNotes": "@progress/semantic-prerelease/generateNotes",
+    "getLastRelease": "@progress/semantic-prerelease/getLastRelease",
+    "verifyConditions": "@progress/semantic-prerelease/verifyConditions",
+    "verifyRelease": "@progress/semantic-prerelease/verifyRelease"
   },
   "files": [
     "dist"

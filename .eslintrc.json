@@ -1,0 +1,6 @@
+{
+  "root": true,
+  "extends": [
+    "./node_modules/@progress/kendo-angular-tasks/eslint/base.js"
+  ]
+}

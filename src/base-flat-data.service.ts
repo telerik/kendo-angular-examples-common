@@ -1,9 +1,7 @@
-import { Injectable } from '@angular/core';
 import { Observable, of , throwError} from 'rxjs';
 import { delay } from 'rxjs/operators';
 import { BaseService } from './base.service';
 
-@Injectable()
 export class BaseFlatDataService<T> extends BaseService<T> {
     private idField: string;
     private getItems: Function;

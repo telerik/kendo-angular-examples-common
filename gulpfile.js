@@ -1,4 +1,4 @@
-/* jshint esnext: true */
+/* eslint-env node, es2020 */
 
 const gulp = require('gulp');
 
