@@ -49,9 +49,9 @@ export class CSPService {
             if (params.get('csp') === 'false' || !match) {
                 this.clearCSP();
             } else if (params.get('csp') === 'true' || match) {
-                params.append('csp', 'false');
-                console.info('Content Security Policy: Apply settings for e2e tests\n' + this.config.policy.replace(/;/g, '\n'));
-                console.info(`Navigate to ${altURL} to disable CSP.`);
+                params.set('csp', 'false');
+                console.info('Content Security Policy: Applying settings for e2e tests\n' + this.config.policy.replace(/;/g, '\n'));
+                console.info(`Navigate to ${altURL}?${params} to disable CSP.`);
 
                 this.applyCSP();
             }
