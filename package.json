@@ -106,8 +106,5 @@
     "getLastRelease": "@progress/semantic-prerelease/getLastRelease",
     "verifyConditions": "@progress/semantic-prerelease/verifyConditions",
     "verifyRelease": "@progress/semantic-prerelease/verifyRelease"
-  },
-  "files": [
-    "dist"
-  ]
+  }
 }
